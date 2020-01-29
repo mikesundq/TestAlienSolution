@@ -6,5 +6,9 @@ namespace AlienZooDomain.Aliens
 {
     public class Predator : Alien
     {
+        public Predator()
+        {
+            Name = "Predator";
+        }
     }
 }
