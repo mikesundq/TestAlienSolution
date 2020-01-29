@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AlienZooDomain.Aliens
 {
-    public class Predetor : Alien
+    public class Xenomorph : Alien
     {
     }
 }
