@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
+using Xunit.Abstractions;
 using AlienZoo.Infrastructure.Services;
 using AlienZooDomain;
 using AlienZooDomain.Aliens;
@@ -10,6 +11,12 @@ namespace TestAlienZoo
 {
     public class TestAlienServices
     {
+        private readonly ITestOutputHelper output;
+
+        public TestAlienServices(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
         [Fact]
         public void CreateAlien_NormalAlien_Success()
         {
@@ -22,8 +29,30 @@ namespace TestAlienZoo
 
             var newPredator = new Predator();
             var newAlien = alienSerivces.CreateAlien(newPredator, "Börje", 150, newPerson);
-
+            output.WriteLine($"newAlien is of type {newAlien.GetType()}");
             Assert.Equal("Börje", newAlien.Name);
+        }
+
+        [Fact]
+        public void CreateAlien_CheckType_GetReturnType()
+        {
+            //Arrange
+            var alienSerivces = new AlienServices();
+
+            var newPerson = new Person
+            {
+                Name = "Börje"
+            };
+
+            var newPredator = new Predator();
+
+          
+            var newAlien = alienSerivces.CreateAlien(newPredator, "Börje", 150, newPerson);
+            //Act
+
+            //Assert
+            Assert.Equal(typeof(Predator), newAlien.GetType());
+            
         }
 
 
