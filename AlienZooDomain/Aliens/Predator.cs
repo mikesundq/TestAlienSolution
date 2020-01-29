@@ -8,7 +8,8 @@ namespace AlienZooDomain.Aliens
     {
         public Predator()
         {
-            Name = "Predator";
+            Origin = "Predator";
+            Color = "Invisible";
         }
     }
 }
