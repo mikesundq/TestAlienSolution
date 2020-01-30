@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AlienZoo.Infrastructure.Persistance
 {
-    class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
@@ -18,7 +18,32 @@ namespace AlienZoo.Infrastructure.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+           // ConfigurePersons(modelBuilder);
+            ConfigureAliens(modelBuilder);
+            SeedDatabase(modelBuilder);
+
+
             base.OnModelCreating(modelBuilder);
+        }
+
+        private void SeedDatabase(ModelBuilder modelBuilder)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ConfigureAliens(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Alien>()
+                .HasOne(b => b.Handler)
+                .WithMany(a => a.HandledAliens)
+                .HasForeignKey(b => b.HandlerID);
+        }
+
+        private void ConfigurePersons(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<Person>().Property(x => x.Name);
+
         }
     }
 }

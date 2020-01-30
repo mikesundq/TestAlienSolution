@@ -45,17 +45,16 @@ namespace TestAlienZoo
             };
 
             var newPredator = new Predator();
-
-          
-            var newAlien = alienSerivces.CreateAlien(newPredator, "Börje", 150, newPerson);
             //Act
+            var newAlien = alienSerivces.CreateAlien(newPredator, "Börje", 150, newPerson);
+           
 
             //Assert
             Assert.Equal(typeof(Predator), newAlien.GetType());
             
         }
 
-
+        /*
         public void AddAlien_NormalPush_Correct()
         {
             throw new NotImplementedException();
@@ -69,6 +68,6 @@ namespace TestAlienZoo
         public void RemoveAlien_(int id)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

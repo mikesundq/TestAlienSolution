@@ -1,4 +1,5 @@
 ﻿using AlienZoo.Application.Interfaces;
+using AlienZoo.Infrastructure.Persistance;
 using AlienZooDomain;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,15 @@ namespace AlienZoo.Infrastructure.Services
 {
     public class AlienServices : IAlienServices
     {
+
+        private readonly ApplicationDbContext context;
+
+        public AlienServices(ApplicationDbContext context)
+        {
+            this.context = context;
+        }
+
+
         public void AddAlien()
         {
             throw new NotImplementedException();
