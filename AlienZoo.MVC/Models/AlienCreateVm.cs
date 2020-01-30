@@ -18,6 +18,8 @@ namespace AlienZoo.MVC.Models
         public string Color { get; set; }
         public string Origin { get; set; }
         [Required]
+        public string AlienType { get; set; }
+        [Required]
         public SelectList Handlers { get; set; }
         public int HandlerID { get; set; }
     }

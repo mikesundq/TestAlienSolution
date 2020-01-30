@@ -36,11 +36,12 @@ namespace AlienZoo.Infrastructure.Services
             return alien;
         }
 
-        public Alien CreateAlien(Alien alien, string name, int age, int HandlerID)
+        public Alien CreateAlien(Alien alien, string name, int age, int HandlerID, string alienType)
         {
             alien.Name = name;
             alien.Age = age;
             alien.HandlerID = HandlerID;
+            alien.AlienType = alienType;
 
             return alien;
         }
