@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AlienZooDomain
 {
-    public abstract class Alien
+    public class Alien
     {
         public int Id { get; set; }
         public int Age { get; set; }
@@ -13,5 +13,7 @@ namespace AlienZooDomain
         public string Color { get; set; }
         public string Origin { get; set; }
         public Person Handler { get; set; }
+
+        
     }
 }

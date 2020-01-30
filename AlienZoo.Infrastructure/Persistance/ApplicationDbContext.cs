@@ -1,4 +1,5 @@
-﻿using AlienZooDomain;
+﻿using AlienZoo.Application.Interfaces;
+using AlienZooDomain;
 using AlienZooDomain.Aliens;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -35,18 +36,20 @@ namespace AlienZoo.Infrastructure.Persistance
                 );
 
             modelBuilder.Entity<Alien>().HasData(
-                new Predator { Id = 1, Name = "Predator", Age = 18, HandlerID = 1 },
+               /* new Predator { Id = 1, Name = "Predator", Age = 18, HandlerID = 1  },
                 new Xenomorph { Id = 2, Name = "Mother", Age = 1, HandlerID = 1},
-                new Wookiee { Id = 3, Name = "Tuggmacka", Age = 250, HandlerID = 2}
+                new Wookiee { Id = 3, Name = "Tuggmacka", Age = 250, HandlerID = 2} */
+                new Alien { Id = 1, Name = "Test", Age = 18, HandlerID = 1}
                 );
         }
 
         private void ConfigureAliens(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Alien>()
-                .HasOne(b => b.Handler)
-                .WithMany(a => a.HandledAliens)
-                .HasForeignKey(b => b.HandlerID);
+                .HasOne(b => b.Handler);
+               /* .WithMany(a => a.HandledAliens)
+                .HasForeignKey(b => b.HandlerID);*/
         }
 
        /* private void ConfigurePredator(ModelBuilder modelBuilder)

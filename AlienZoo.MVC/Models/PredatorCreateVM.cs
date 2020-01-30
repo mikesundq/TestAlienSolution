@@ -1,4 +1,4 @@
-﻿using AlienZoo.Application.Interfaces;
+﻿using AlienZooDomain;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace AlienZoo.MVC.Models
 {
-    public class AlienCreateVm : IisAlien
+    public class PredatorCreateVm : AlienCreateVm
     {
-        [Display]
+        /*[Display]
         public int Age { get; set; }
         [MaxLength(40)]
         [Display(Name = "Alien Name")]
@@ -22,7 +22,7 @@ namespace AlienZoo.MVC.Models
         public SelectList Handlers { get; set; }
         public int HandlerID { get; set; }
         [Required]
-        [Display(Name = "Alien Breed")]
-        public SelectList AlienType { get; set; }
+        [Display(Name = "Alien Breed")]*/
+        
     }
 }

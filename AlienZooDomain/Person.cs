@@ -1,6 +1,8 @@
-﻿using System;
+﻿using AlienZoo.Application.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
+
 
 namespace AlienZooDomain
 {
@@ -8,6 +10,6 @@ namespace AlienZooDomain
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public IList<Alien> HandledAliens { get; set; } = new List<Alien>();
+        public List<Alien> HandledAliens { get; set; } = new List<Alien>();
     }
 }
