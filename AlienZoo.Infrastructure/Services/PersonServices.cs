@@ -11,6 +11,10 @@ namespace AlienZoo.Infrastructure.Services
     {
         private readonly ApplicationDbContext context;
 
+        public PersonServices()
+        {
+        }
+
         public PersonServices(ApplicationDbContext context)
         {
             this.context = context;

@@ -11,7 +11,8 @@ namespace AlienZoo.Application.Interfaces
         public void EditAlien(int id);
         public void RemoveAlien(int id);
 
-        public Alien CreateAlien(Alien alien, string name, int age, Person person); 
+        public Alien CreateAlien(Alien alien, string name, int age, Person person);
+        public Alien CreateAlien(Alien alien, string name, int age, int HandlerID);
 
     }
 }

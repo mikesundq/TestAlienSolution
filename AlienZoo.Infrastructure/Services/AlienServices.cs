@@ -12,6 +12,10 @@ namespace AlienZoo.Infrastructure.Services
 
         private readonly ApplicationDbContext context;
 
+        public AlienServices()
+        {
+            
+        }
         public AlienServices(ApplicationDbContext context)
         {
             this.context = context;
@@ -28,6 +32,15 @@ namespace AlienZoo.Infrastructure.Services
             alien.Name = name;
             alien.Age = age;
             alien.Handler = person;
+
+            return alien;
+        }
+
+        public Alien CreateAlien(Alien alien, string name, int age, int HandlerID)
+        {
+            alien.Name = name;
+            alien.Age = age;
+            alien.HandlerID = HandlerID;
 
             return alien;
         }
