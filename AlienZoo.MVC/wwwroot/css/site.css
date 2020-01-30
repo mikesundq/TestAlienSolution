@@ -24,10 +24,15 @@ a {
   border-color: #1861ac;
 }
 
+/*some fun detail, change later..*/
+#our-link-to-zoo-data {
+    background-color: darkgoldenrod;
+    font-size: 3em;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
